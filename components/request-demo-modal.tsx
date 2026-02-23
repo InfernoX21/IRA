@@ -32,7 +32,7 @@ export default function DemoRequestModal({ children }: DemoRequestModalProps) {
 
         try {
             console.log("Attempting to send demo request:", data);
-            const response = await fetch("https://formspree.io/f/ayush21.pradhan@gmail.com", {
+            const response = await fetch("https://formspree.io/f/mvzbvypb", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
