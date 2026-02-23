@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "site-background",
+      "description": "Futuristic smart city with green energy highlights",
+      "imageUrl": "https://images.unsplash.com/photo-1519669556878-63bd5de58145?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwc21hcnQlMjBjaXR5JTIwbmlnaHQlMjBncmVlbiUyMGVuZXJneXxlbnwwfHx8fDE3NzE4Mjg4MjF8MA&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "futuristic city"
+    },
+    {
+      "id": "dev1",
+      "description": "Developer 1 profile picture",
+      "imageUrl": "https://images.unsplash.com/photo-1599566147214-ce487862ea4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBmYWNlfGVufDB8fHx8MTc3MTc2NTQ2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person face"
+    },
+    {
+      "id": "dev2",
+      "description": "Developer 2 profile picture",
+      "imageUrl": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzE4MTI3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "dev3",
+      "description": "Developer 3 profile picture",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwaGVhZHNob3R8ZW58MHx8fHwxNzcxNzgyNDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "dev4",
+      "description": "Developer 4 profile picture",
+      "imageUrl": "https://images.unsplash.com/photo-1679124500499-88d6a0d3774b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBjb2Rpbmd8ZW58MHx8fHwxNzcxODEzNjE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person coding"
+    },
+    {
+      "id": "research1",
+      "description": "Abstract visualization for climate data research",
+      "imageUrl": "https://images.unsplash.com/photo-1542903660-eedba2cda473?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhYnN0cmFjdCUyMGRhdGF8ZW58MHx8fHwxNzcxNzcyMDczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract data"
+    },
+    {
+      "id": "research2",
+      "description": "Satellite imagery model visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1567705977023-3ca5df88dc9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzYXRlbGxpdGUlMjBjaXR5fGVufDB8fHx8MTc3MTgyNDQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "satellite city"
+    },
+    {
+      "id": "research3",
+      "description": "Urban land use data map",
+      "imageUrl": "https://images.unsplash.com/photo-1476385822777-70eabacbd41f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc3MTc3NjgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    },
+    {
+      "id": "dashboard-map",
+      "description": "Mock map for dashboard preview",
+      "imageUrl": "https://images.unsplash.com/photo-1536031696538-924fe11c7037?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaXR5JTIwYWVyaWFsfGVufDB8fHx8MTc3MTgyMjI4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city aerial"
+    },
+    {
+      "id": "growth-before",
+      "description": "Urban area before growth",
+      "imageUrl": "https://images.unsplash.com/photo-1769557240934-8bd2cd5919e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaXR5JTIwZGV2ZWxvcG1lbnR8ZW58MHx8fHwxNzcxODI0NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city development"
+    },
+    {
+      "id": "growth-after",
+      "description": "Urban area after growth",
+      "imageUrl": "https://images.unsplash.com/photo-1567449303183-ae0d6ed1498e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBjaXR5fGVufDB8fHx8MTc3MTc1NDg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern city"
+    }
+  ]
+}

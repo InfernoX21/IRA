@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 11% 5%;
+    /* #0B0F0D */
+    --foreground: 0 0% 98%;
+
+    --card: 140 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 140 11% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 145 100% 39%;
+    /* #00C853 */
+    --primary-foreground: 145 100% 10%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 26 100% 50%;
+    /* #FF6F00 */
+    --accent-foreground: 26 100% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 145 70% 15%;
+    --input: 0 0% 14.9%;
+    --ring: 145 100% 39%;
+    /* Using primary for ring */
+    --radius: 0.75rem;
+
+    --chart-1: 145 100% 39%;
+    --chart-2: 26 100% 50%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 140 11% 5%;
+    --foreground: 0 0% 98%;
+    --card: 140 10% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 140 11% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 145 100% 39%;
+    --primary-foreground: 145 100% 10%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 26 100% 50%;
+    --accent-foreground: 26 100% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 145 70% 15%;
+    --input: 0 0% 14.9%;
+    --ring: 145 100% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/20;
+    cursor: none;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  section {
+    @apply py-20 md:py-32;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl transition-all duration-500;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card:hover {
+    @apply border-white/20;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  }
+
+  .glass-button {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300;
+  }
+
+  .glass-card-interactive {
+    @apply transition-all duration-500 ease-in-out;
+  }
+
+  .glass-card-interactive:hover {
+    @apply transform -translate-y-2 border-primary/50;
+    box-shadow: 0 0 30px hsla(var(--primary), 0.3);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-center mb-12 font-headline bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300;
+  }
+}
+
+@layer utilities {
+  .animated-grid {
+    @apply fixed inset-0 w-full h-full -z-10 opacity-50;
+    background-image: linear-gradient(to right, hsla(var(--primary), 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, hsla(var(--primary), 0.1) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    animation: moveGrid 60s linear infinite;
+  }
+
+  @keyframes moveGrid {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: -8rem -8rem;
+    }
+  }
+
+  @keyframes slow-float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsla(var(--primary), 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 30px hsla(var(--primary), 0.5);
+    }
+  }
+
+  @keyframes pulse-slow {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .gis-grid {
+    background-image:
+      linear-gradient(to right, hsla(var(--primary), 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, hsla(var(--primary), 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .topo-lines {
+    background: radial-gradient(circle at 50% 50%, transparent 98%, hsla(var(--primary), 0.03) 100%);
+    background-size: 80px 80px;
+  }
+
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 0.5;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    95% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes drift-lat {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+
+  @keyframes drift-long {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100px);
+    }
+  }
+
+  @keyframes data-pulse {
+
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.5);
+    }
+  }
+
+  .animate-scan {
+    animation: scanline 10s linear infinite;
+  }
+
+  .animate-drift-lat {
+    animation: drift-lat 60s linear infinite;
+  }
+
+  .animate-drift-long {
+    animation: drift-long 45s linear infinite;
+  }
+
+  .animate-data-pulse {
+    animation: data-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+
+  .animate-dash {
+    animation: dash 20s linear infinite;
+  }
+
+  @keyframes morph {
+
+    0%,
+    100% {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+  }
+
+  @keyframes heatpulse {
+
+    0%,
+    100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.3;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes drift-cloud {
+    from {
+      transform: translate(-10%, -10%);
+    }
+
+    to {
+      transform: translate(10%, 10%);
+    }
+  }
+
+  .animate-morph {
+    animation: morph 15s linear infinite;
+  }
+
+  .animate-heatpulse {
+    animation: heatpulse 8s ease-in-out infinite;
+  }
+
+  .animate-drift-cloud {
+    animation: drift-cloud 120s linear infinite alternate;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    @apply ml-1 text-primary animate-[blink_1s_step-start_infinite];
+  }
+}
