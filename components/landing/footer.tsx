@@ -3,6 +3,8 @@ import { Linkedin, Github, Twitter } from "lucide-react";
 
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/path-utils';
+import DemoRequestModal from "@/components/request-demo-modal";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
     return (
@@ -17,18 +19,28 @@ export default function Footer() {
                         <p className="text-sm text-neutral-400 max-w-xs">Intelligent Resource Architecture for a sustainable urban future.</p>
                     </div>
                     <div>
-                        <h3 className="font-semibold mb-4">About</h3>
+                        <h3 className="font-semibold mb-4 uppercase tracking-widest text-xs">About</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="text-neutral-400 hover:text-primary transition-colors">Documentation</Link></li>
+                            <li><a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-primary transition-colors">Documentation</a></li>
                             <li><Link href="#research" className="text-neutral-400 hover:text-primary transition-colors">Research</Link></li>
+                            <li><Link href="#how-it-works" className="text-neutral-400 hover:text-primary transition-colors">Process</Link></li>
+                            <li><Link href="#impact" className="text-neutral-400 hover:text-primary transition-colors">Impact</Link></li>
                             <li><Link href="#team" className="text-neutral-400 hover:text-primary transition-colors">Team</Link></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-semibold mb-4">Support</h3>
+                        <h3 className="font-semibold mb-4 uppercase tracking-widest text-xs">Support</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="text-neutral-400 hover:text-primary transition-colors">Contact</Link></li>
-                            <li><Link href="#" className="text-neutral-400 hover:text-primary transition-colors">Partner Program</Link></li>
+                            <li>
+                                <DemoRequestModal>
+                                    <button className="text-neutral-400 hover:text-primary transition-colors text-left">Contact</button>
+                                </DemoRequestModal>
+                            </li>
+                            <li>
+                                <DemoRequestModal>
+                                    <button className="text-neutral-400 hover:text-primary transition-colors text-left">Partner Program</button>
+                                </DemoRequestModal>
+                            </li>
                         </ul>
                     </div>
                     <div>

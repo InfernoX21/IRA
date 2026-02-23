@@ -36,9 +36,11 @@ export default function Header() {
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
             <Image src={getAssetPath("/logo.png")} alt="IRA Logo" width={200} height={80} className="w-40 h-auto object-contain" />
           </Link>
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <nav className="hidden md:flex gap-6 text-sm font-medium uppercase tracking-wider">
             <Link href="#research" className="hover:text-primary transition-colors" prefetch={false}>Research</Link>
             <Link href="#features" className="hover:text-primary transition-colors" prefetch={false}>Features</Link>
+            <Link href="#how-it-works" className="hover:text-primary transition-colors" prefetch={false}>Process</Link>
+            <Link href="#impact" className="hover:text-primary transition-colors" prefetch={false}>Impact</Link>
             <Link href="#team" className="hover:text-primary transition-colors" prefetch={false}>Team</Link>
           </nav>
           <div className="hidden md:block">
@@ -68,9 +70,11 @@ export default function Header() {
               </div>
             </div>
             <div className="mt-12">
-              <nav className="grid gap-y-8 text-center">
+              <nav className="grid gap-y-8 text-center uppercase tracking-widest">
                 <Link href="#research" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Research</Link>
                 <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Features</Link>
+                <Link href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Process</Link>
+                <Link href="#impact" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Impact</Link>
                 <Link href="#team" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Team</Link>
               </nav>
             </div>

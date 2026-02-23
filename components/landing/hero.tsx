@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart, Leaf, TrendingUp } from 'lucide-react';
 import ScrollAnimationWrapper from '../scroll-animation-wrapper';
@@ -79,11 +80,13 @@ export default function Hero() {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-              <Button size="lg" className="group animate-pulse-glow">
-                Explore Platform <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="group animate-pulse-glow" asChild>
+                <Link href="#features">
+                  Explore Platform <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://docs.google.com/document/d/1zlYiXDWz9S8YjM9Bmehbl4lEUQo3HUBiInyRYL26a4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                   View Research
                 </a>
               </Button>
