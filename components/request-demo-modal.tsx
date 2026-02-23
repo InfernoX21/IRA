@@ -109,7 +109,7 @@ export default function DemoRequestModal({ children }: DemoRequestModalProps) {
                             id="phone"
                             name="phone"
                             type="tel"
-                            placeholder="+1 (555) 000-0000"
+                            placeholder="+91 98765 43210"
                             required
                             className="bg-white/5 border-white/10 focus:border-primary/50"
                         />
