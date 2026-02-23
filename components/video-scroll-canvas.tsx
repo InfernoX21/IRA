@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { getAssetPath } from '@/lib/path-utils';
 
 interface VideoScrollCanvasProps {
     frameCount: number;
@@ -22,7 +23,8 @@ export default function VideoScrollCanvas({ frameCount, basePath, pattern }: Vid
             for (let i = 1; i <= frameCount; i++) {
                 const img = new Image();
                 const frameNum = i.toString().padStart(3, '0');
-                img.src = `${basePath}/${pattern.replace('%NUM%', frameNum)}`;
+                const path = `${basePath}/${pattern.replace('%NUM%', frameNum)}`;
+                img.src = getAssetPath(path);
 
                 img.onload = () => {
                     loadedCount++;

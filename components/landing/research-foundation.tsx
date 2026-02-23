@@ -10,6 +10,7 @@ import { BarChart, Layers, Satellite, TestTube2 } from "lucide-react"
 import ScrollAnimationWrapper from "../scroll-animation-wrapper"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/path-utils'
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 import { Slider } from "../ui/slider"
 import { useState, useMemo } from 'react';
@@ -44,7 +45,7 @@ const UrbanGrowthSlider = () => {
   return (
     <div className="relative w-full aspect-video rounded-lg overflow-hidden">
       <Image
-        src="/after.png"
+        src={getAssetPath("/after.png")}
         alt="Urban area after growth"
         fill
         style={{ objectFit: "cover" }}
@@ -54,7 +55,7 @@ const UrbanGrowthSlider = () => {
         style={{ clipPath: `inset(0 ${100 - sliderValue}% 0 0)` }}
       >
         <Image
-          src="/before.png"
+          src={getAssetPath("/before.png")}
           alt="Urban area before growth"
           fill
           style={{ objectFit: "cover" }}

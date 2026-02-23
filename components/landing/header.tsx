@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/path-utils';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,7 +33,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-20 items-center justify-between">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
-            <Image src="/logo.png" alt="IRA Logo" width={200} height={80} className="w-40 h-auto object-contain" />
+            <Image src={getAssetPath("/logo.png")} alt="IRA Logo" width={200} height={80} className="w-40 h-auto object-contain" />
           </Link>
           <nav className="hidden md:flex gap-6 text-sm font-medium">
             <Link href="#research" className="hover:text-primary transition-colors" prefetch={false}>Research</Link>
@@ -54,7 +55,7 @@ export default function Header() {
           <div className="p-4">
             <div className="flex items-center justify-between">
               <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                <Image src="/logo.png" alt="IRA Logo" width={160} height={60} className="w-32 h-auto object-contain" />
+                <Image src={getAssetPath("/logo.png")} alt="IRA Logo" width={160} height={60} className="w-32 h-auto object-contain" />
               </Link>
               <div className="-mr-2">
                 <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Linkedin, Github, Twitter } from "lucide-react";
 
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/path-utils';
 
 export default function Footer() {
     return (
@@ -11,7 +12,7 @@ export default function Footer() {
                 <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
                     <div className="lg:col-span-2">
                         <Link href="#" className="flex items-center gap-2 mb-4" prefetch={false}>
-                            <Image src="/logo.png" alt="IRA Logo" width={300} height={100} className="w-60 h-auto object-contain" />
+                            <Image src={getAssetPath("/logo.png")} alt="IRA Logo" width={300} height={100} className="w-60 h-auto object-contain" />
                         </Link>
                         <p className="text-sm text-neutral-400 max-w-xs">Intelligent Resource Architecture for a sustainable urban future.</p>
                     </div>

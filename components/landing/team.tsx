@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/path-utils';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 import { Card, CardContent } from '../ui/card';
@@ -13,7 +14,7 @@ const teamMember = {
   name: 'Ayush Ranjan Pradhan',
   role: 'Project Lead',
   bio: "Architecting the blueprint for autonomous urban intelligence, Ayush Ranjan Pradhan serves as the principal Project Lead of IRA (Intelligent Research Architecture). He bridges high-level strategic vision with hands-on system design, engineering the analytical models that transform geospatial data into predictive insights. He is driven by the philosophy that the ultimate role of technology is to weave a silent, self-correcting intelligence into the physical fabric of our world.",
-  image: '/profpic.jpg',
+  image: getAssetPath('/profpic.jpg'),
   linkedin: 'https://www.linkedin.com/in/ayush-ranjan-pradhan-008468309',
   github: 'https://github.com/InfernoX21',
   email: 'mailto:ayush21.pradhan@gmail.com',

@@ -5,12 +5,13 @@ import CustomCursor from "@/components/custom-cursor";
 import ScrollProgress from "@/components/scroll-progress";
 import './globals.css';
 import { cn } from '@/lib/utils';
+import { getAssetPath } from '@/lib/path-utils';
 
 export const metadata: Metadata = {
   title: 'IRA – Intelligent Resource Architecture',
   description: 'Reimagining Urban Sustainability with Intelligent Infrastructure',
   icons: {
-    icon: "favicon.png",
+    icon: getAssetPath("/favicon.png"),
   },
 };
 
