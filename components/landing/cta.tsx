@@ -22,7 +22,11 @@ export default function Cta() {
                                     <Button size="lg">Request Demo</Button>
                                 </DemoRequestModal>
                                 <Button size="lg" variant="outline">Partner With Us</Button>
-                                <Button size="lg" variant="ghost">Download Whitepaper</Button>
+                                <Button size="lg" variant="ghost" asChild>
+                                    <a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                        Download Whitepaper
+                                    </a>
+                                </Button>
                             </div>
                         </div>
                     </div>
