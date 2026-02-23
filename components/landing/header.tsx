@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/path-utils';
+import DemoRequestModal from '@/components/request-demo-modal';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,9 @@ export default function Header() {
             <Link href="#team" className="hover:text-primary transition-colors" prefetch={false}>Team</Link>
           </nav>
           <div className="hidden md:block">
-            <Button>Request Demo</Button>
+            <DemoRequestModal>
+              <Button>Request Demo</Button>
+            </DemoRequestModal>
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(true)}>
@@ -72,7 +75,9 @@ export default function Header() {
               </nav>
             </div>
             <div className="absolute bottom-10 left-4 right-4">
-              <Button className="w-full" size="lg">Request Demo</Button>
+              <DemoRequestModal>
+                <Button className="w-full" size="lg">Request Demo</Button>
+              </DemoRequestModal>
             </div>
           </div>
         </div>
