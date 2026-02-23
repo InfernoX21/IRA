@@ -3,6 +3,7 @@ const nextConfig = {
     output: 'export',
     basePath: '/IRA',
     trailingSlash: true,
+    optimizeFonts: false,
     images: {
         unoptimized: true,
         remotePatterns: [

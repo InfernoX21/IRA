@@ -1,23 +1,10 @@
 import * as React from 'react';
 import type { Metadata } from 'next';
-import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import { Toaster } from "@/components/ui/toaster";
 import CustomCursor from "@/components/custom-cursor";
 import ScrollProgress from "@/components/scroll-progress";
 import './globals.css';
 import { cn } from '@/lib/utils';
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-jakarta',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'IRA – Intelligent Resource Architecture',
@@ -37,7 +24,7 @@ import WeatherSystems from '@/components/weather-systems';
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={cn("dark", spaceGrotesk.variable, plusJakartaSans.variable)}>
+    <html lang="en" className="dark">
       <body className="font-body bg-background text-foreground antialiased selection:bg-primary/40">
         <IntelligenceOverlay />
         <WeatherSystems />

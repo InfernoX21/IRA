@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --foreground-rgb: 255, 255, 255;
     --background: 140 11% 5%;
     /* #0B0F0D */
     --foreground: 0 0% 98%;
