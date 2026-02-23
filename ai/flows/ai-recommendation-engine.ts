@@ -8,8 +8,8 @@
  * - AIRecommendationEngineOutput - The return type for the aiRecommendationEngine function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'zod';
 
 const AIRecommendationEngineInputSchema = z.object({
   climateAnalysis: z
@@ -59,8 +59,8 @@ export async function aiRecommendationEngine(
 
 const aiRecommendationEnginePrompt = ai.definePrompt({
   name: 'aiRecommendationEnginePrompt',
-  input: {schema: AIRecommendationEngineInputSchema},
-  output: {schema: AIRecommendationEngineOutputSchema},
+  input: { schema: AIRecommendationEngineInputSchema },
+  output: { schema: AIRecommendationEngineOutputSchema },
   prompt: `You are an expert urban planner and sustainability consultant for the IRA platform. Your task is to generate intelligent and context-specific recommendations for sustainable urban development.
 
 Consider the following comprehensive data:
@@ -84,8 +84,8 @@ const aiRecommendationEngineFlow = ai.defineFlow(
     inputSchema: AIRecommendationEngineInputSchema,
     outputSchema: AIRecommendationEngineOutputSchema,
   },
-  async input => {
-    const {output} = await aiRecommendationEnginePrompt(input);
+  async (input: AIRecommendationEngineInput) => {
+    const { output } = await aiRecommendationEnginePrompt(input);
     return output!;
   }
 );
