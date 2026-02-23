@@ -31,6 +31,7 @@ export default function DemoRequestModal({ children }: DemoRequestModalProps) {
         const data = Object.fromEntries(formData);
 
         try {
+            console.log("Attempting to send demo request:", data);
             const response = await fetch("https://formspree.io/f/ayush21.pradhan@gmail.com", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -40,6 +41,9 @@ export default function DemoRequestModal({ children }: DemoRequestModalProps) {
                 }
             });
 
+            const result = await response.json();
+            console.log("Formspree response:", result);
+
             if (response.ok) {
                 toast({
                     title: "Request Sent Successfully",
@@ -47,12 +51,17 @@ export default function DemoRequestModal({ children }: DemoRequestModalProps) {
                 });
                 setOpen(false);
             } else {
-                throw new Error("Failed to send request");
+                let errorMessage = "Failed to send request.";
+                if (result.errors) {
+                    errorMessage = result.errors.map((error: any) => error.message).join(", ");
+                }
+                throw new Error(errorMessage);
             }
-        } catch (error) {
+        } catch (error: any) {
+            console.error("Submission error:", error);
             toast({
-                title: "Error",
-                description: "Something went wrong. Please try again.",
+                title: "Dispatch Error",
+                description: error.message || "Something went wrong. Please check your connection.",
                 variant: "destructive",
             });
         } finally {
