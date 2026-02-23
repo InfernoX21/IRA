@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: 'IRA – Intelligent Resource Architecture',
   description: 'Reimagining Urban Sustainability with Intelligent Infrastructure',
   icons: {
-    icon: "/favicon.png",
+    icon: "favicon.png",
   },
 };
 
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <WeatherSystems />
         <VideoScrollCanvas
           frameCount={240}
-          basePath="/video-frames"
+          basePath="video-frames"
           pattern="ezgif-frame-%NUM%.jpg"
         />
         <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-br from-background/30 via-black/60 to-background/30" />
