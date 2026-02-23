@@ -1,4 +1,3 @@
-'use server';
 /**
  * @fileOverview This file implements a Genkit flow for generating intelligent and context-specific
  * recommendations for sustainable urban development based on comprehensive data analysis.
