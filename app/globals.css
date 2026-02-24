@@ -93,8 +93,9 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-xl transition-all duration-500;
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl transition-all duration-300;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    will-change: transform, opacity;
   }
 
   .glass-card:hover {
@@ -103,7 +104,7 @@
   }
 
   .glass-button {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300;
+    @apply bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300;
   }
 
   .glass-card-interactive {
@@ -113,6 +114,12 @@
   .glass-card-interactive:hover {
     @apply transform -translate-y-2 border-primary/50;
     box-shadow: 0 0 30px hsla(var(--primary), 0.3);
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   .section-title {

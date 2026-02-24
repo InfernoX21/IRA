@@ -36,17 +36,34 @@ export default function TerrainCanvas() {
         };
     }, []);
 
+    const isVisibleRef = useRef(true);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                isVisibleRef.current = entry.isIntersecting;
+            },
+            { threshold: 0.1 }
+        );
+
+        if (canvasRef.current) {
+            observer.observe(canvasRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { alpha: true });
         if (!ctx) return;
 
         let animationFrameId: number;
         let time = 0;
 
         const resize = () => {
-            const dpr = window.devicePixelRatio || 1;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap DPR at 2 for performance
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
             ctx.scale(dpr, dpr);
@@ -56,6 +73,11 @@ export default function TerrainCanvas() {
         resize();
 
         const draw = () => {
+            if (!isVisibleRef.current) {
+                animationFrameId = requestAnimationFrame(draw);
+                return;
+            }
+
             time += 0.005;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 

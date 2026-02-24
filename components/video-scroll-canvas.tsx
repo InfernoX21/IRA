@@ -49,57 +49,59 @@ export default function VideoScrollCanvas({ frameCount, basePath, pattern }: Vid
         const context = canvas.getContext('2d');
         if (!context) return;
 
+        let lastFrame = -1;
         const updateCanvas = () => {
             const html = document.documentElement;
-            const scrollTop = html.scrollTop;
+            const scrollTop = window.pageYOffset || html.scrollTop;
             const maxScrollTop = html.scrollHeight - window.innerHeight;
-            const scrollFraction = scrollTop / maxScrollTop;
-            const frameIndex = Math.min(
-                frameCount - 1,
-                Math.floor(scrollFraction * frameCount)
-            );
+            const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScrollTop));
+            const frameIndex = Math.floor(scrollFraction * (frameCount - 1));
 
-            requestAnimationFrame(() => drawFrame(frameIndex));
-        };
-
-        const drawFrame = (index: number) => {
-            if (!images[index] || !canvas || !context) return;
-
-            const img = images[index];
-
-            const dpr = window.devicePixelRatio || 1;
-            const canvasWidth = canvas.width;
-            const canvasHeight = canvas.height;
-            const imgWidth = img.width;
-            const imgHeight = img.height;
-
-            // Use a higher zoom factor to ensure no black edges and satisfying "zoom a bit more" request
-            const zoomFactor = 1.3;
-            const ratio = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight) * zoomFactor;
-            const newWidth = imgWidth * ratio;
-            const newHeight = imgHeight * ratio;
-            const x = (canvasWidth - newWidth) / 2;
-            const y = (canvasHeight - newHeight) / 2;
-
-            context.clearRect(0, 0, canvasWidth, canvasHeight);
-            context.drawImage(img, x, y, newWidth, newHeight);
-        };
-
-        // Resize handler
-        const handleResize = () => {
-            if (canvas) {
-                const dpr = window.devicePixelRatio || 1;
-                canvas.width = window.innerWidth * dpr;
-                canvas.height = window.innerHeight * dpr;
-                // No need to set CSS size here as it's handled by Tailwind classes (w-full h-full)
-                updateCanvas();
+            if (frameIndex !== lastFrame) {
+                lastFrame = frameIndex;
+                requestAnimationFrame(() => drawFrame(frameIndex));
             }
         };
 
-        window.addEventListener('scroll', updateCanvas);
+        let cachedDimensions = { width: 0, height: 0, x: 0, y: 0, newWidth: 0, newHeight: 0 };
+
+        const drawFrame = (index: number) => {
+            if (!images[index] || !canvas || !context) return;
+            const img = images[index];
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(img, cachedDimensions.x, cachedDimensions.y, cachedDimensions.newWidth, cachedDimensions.newHeight);
+        };
+
+        const handleResize = () => {
+            if (!canvas || images.length === 0) return;
+
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            canvas.width = w * dpr;
+            canvas.height = h * dpr;
+
+            const img = images[0];
+            const zoomFactor = 1.3;
+            const ratio = Math.max(canvas.width / img.width, canvas.height / img.height) * zoomFactor;
+
+            cachedDimensions = {
+                width: canvas.width,
+                height: canvas.height,
+                newWidth: img.width * ratio,
+                newHeight: img.height * ratio,
+                x: (canvas.width - img.width * ratio) / 2,
+                y: (canvas.height - img.height * ratio) / 2
+            };
+
+            updateCanvas();
+        };
+
+        window.addEventListener('scroll', updateCanvas, { passive: true });
         window.addEventListener('resize', handleResize);
 
-        // Initial draw
         handleResize();
 
         return () => {
