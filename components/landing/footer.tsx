@@ -21,7 +21,7 @@ export default function Footer() {
                     <div>
                         <h3 className="font-semibold mb-4 uppercase tracking-widest text-xs">About</h3>
                         <ul className="space-y-2 text-sm">
-                            <li><a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-primary transition-colors">Documentation</a></li>
+                            <li><a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/export?format=pdf" download="IRA_Technical_Whitepaper.pdf" className="text-neutral-400 hover:text-primary transition-colors">Documentation</a></li>
                             <li><Link href="#research" className="text-neutral-400 hover:text-primary transition-colors">Research</Link></li>
                             <li><Link href="#how-it-works" className="text-neutral-400 hover:text-primary transition-colors">Process</Link></li>
                             <li><Link href="#impact" className="text-neutral-400 hover:text-primary transition-colors">Impact</Link></li>
