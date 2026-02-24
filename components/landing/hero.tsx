@@ -86,7 +86,7 @@ export default function Hero() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://docs.google.com/document/d/18Ntbe14ux4KmefIHe34MetlUVu21roKB7zlvomkJ5dI/export?format=pdf" download="IRA_Technical_Whitepaper.pdf">
+                <a href="https://docs.google.com/document/d/1zlYiXDWz9S8YjM9Bmehbl4lEUQo3HUBiInyRYL26a4Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                   View Research
                 </a>
               </Button>
