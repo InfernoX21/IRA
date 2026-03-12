@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Glasses } from 'lucide-react';
 
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/path-utils';
@@ -43,7 +43,13 @@ export default function Header() {
             <Link href="#impact" className="hover:text-primary transition-colors" prefetch={false}>Impact</Link>
             <Link href="#team" className="hover:text-primary transition-colors" prefetch={false}>Team</Link>
           </nav>
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <Button asChild variant="outline" className="border-primary/50 hover:bg-primary/20 gap-2">
+              <a href="https://vrmap.kairo.at/" target="_blank" rel="noopener noreferrer">
+                <Glasses className="h-4 w-4" />
+                Experience in VR
+              </a>
+            </Button>
             <DemoRequestModal>
               <Button>Request Demo</Button>
             </DemoRequestModal>
@@ -78,7 +84,13 @@ export default function Header() {
                 <Link href="#team" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Team</Link>
               </nav>
             </div>
-            <div className="absolute bottom-10 left-4 right-4">
+            <div className="absolute bottom-10 left-4 right-4 flex flex-col gap-4">
+              <Button asChild variant="outline" className="w-full border-primary/50" size="lg">
+                <a href="https://vrmap.kairo.at/" target="_blank" rel="noopener noreferrer">
+                  <Glasses className="mr-2 h-5 w-5" />
+                  Experience in VR
+                </a>
+              </Button>
               <DemoRequestModal>
                 <Button className="w-full" size="lg">Request Demo</Button>
               </DemoRequestModal>

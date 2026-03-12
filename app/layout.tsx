@@ -1,11 +1,11 @@
 import * as React from 'react';
 import type { Metadata } from 'next';
-import { Toaster } from "@/components/ui/toaster";
-import CustomCursor from "@/components/custom-cursor";
-import ScrollProgress from "@/components/scroll-progress";
+import { Toaster } from "../components/ui/toaster";
+import CustomCursor from "../components/custom-cursor";
+import ScrollProgress from "../components/scroll-progress";
 import './globals.css';
-import { cn } from '@/lib/utils';
-import { getAssetPath } from '@/lib/path-utils';
+import { cn } from '../lib/utils';
+import { getAssetPath } from '../lib/path-utils';
 
 export const metadata: Metadata = {
   title: 'IRA – Intelligent Resource Architecture',
@@ -19,9 +19,9 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-import VideoScrollCanvas from '@/components/video-scroll-canvas';
-import IntelligenceOverlay from '@/components/intelligence-overlay';
-import WeatherSystems from '@/components/weather-systems';
+import VideoScrollCanvas from '../components/video-scroll-canvas';
+import IntelligenceOverlay from '../components/intelligence-overlay';
+import WeatherSystems from '../components/weather-systems';
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
