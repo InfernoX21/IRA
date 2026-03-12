@@ -81,7 +81,7 @@ export default function Hero() {
           <ScrollAnimationWrapper delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
               <Button size="lg" className="group animate-pulse-glow" asChild>
-                <a href="http://localhost:3000">
+                <a href="https://ira-map.vercel.app/">
                   View Platform <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
