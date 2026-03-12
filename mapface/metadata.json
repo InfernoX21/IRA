@@ -1,0 +1,7 @@
+{
+  "name": "IRA - Intelligent Resource Architecture",
+  "description": "3D AI-Driven Climate-Adaptive Urban Planning Platform with Google Maps integration and real-time environmental scoring.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

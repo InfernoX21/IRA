@@ -38,6 +38,7 @@ export default function Header() {
           </Link>
           <nav className="hidden md:flex gap-6 text-sm font-medium uppercase tracking-wider">
             <Link href="#research" className="hover:text-primary transition-colors" prefetch={false}>Research</Link>
+            <Link href="http://localhost:3000" className="hover:text-primary transition-colors font-bold text-primary" prefetch={false}>Platform</Link>
             <Link href="#features" className="hover:text-primary transition-colors" prefetch={false}>Features</Link>
             <Link href="#how-it-works" className="hover:text-primary transition-colors" prefetch={false}>Process</Link>
             <Link href="#impact" className="hover:text-primary transition-colors" prefetch={false}>Impact</Link>
@@ -78,6 +79,7 @@ export default function Header() {
             <div className="mt-12">
               <nav className="grid gap-y-8 text-center uppercase tracking-widest">
                 <Link href="#research" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Research</Link>
+                <Link href="http://localhost:3000" onClick={() => setMobileMenuOpen(false)} className="text-xl font-bold text-primary hover:text-primary transition-colors" prefetch={false}>Platform</Link>
                 <Link href="#features" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Features</Link>
                 <Link href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Process</Link>
                 <Link href="#impact" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium hover:text-primary transition-colors" prefetch={false}>Impact</Link>
